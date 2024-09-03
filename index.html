@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 48px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            width: 150px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #pos {
+            background: linear-gradient(135deg, #56ab2f, #a8e063);
+            color: white;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #pos:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #neg {
+            background: linear-gradient(135deg, #f85032, #e73827);
+            color: white;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        #neg:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Q?</h1>
+    <p>E:</p>
+    <div class="botoes">
+        <a href="./obrigado.html"><button id="pos">C!</button></a>
+        <button id="neg">N</button>
+    </div>
+
+    <script>
+        const botao = document.querySelector('#neg');
+
+        botao.addEventListener("mouseover", function () {
+            const randomX = Math.random() * (window.innerWidth - botao.clientWidth);
+            const randomY = Math.random() * (window.innerHeight - botao.clientHeight);
+
+            botao.style.position = 'absolute';
+            botao.style.left = `${randomX}px`;
+            botao.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
