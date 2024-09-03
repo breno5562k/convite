@@ -81,21 +81,22 @@
     <h1>Q?</h1>
     <p>E:</p>
     <div class="botoes">
-        <a href="./obrigado.html"><button id="pos">C!</button></a>
+        <a href="./obrigado.html"><button id="pos">CCC!</button></a>
         <button id="neg">N</button>
     </div>
 
     <script>
         const botao = document.querySelector('#neg');
 
-        botao.addEventListener("mouseover", function () {
-            const randomX = Math.random() * (window.innerWidth - botao.clientWidth);
-            const randomY = Math.random() * (window.innerHeight - botao.clientHeight);
+botao.addEventListener("mouseover", function () {
+    const maxX = window.innerWidth - botao.offsetWidth; // Calcula o espaço horizontal disponível
+    const maxY = window.innerHeight - botao.offsetHeight; // Calcula o espaço vertical disponível
+    
+    let moveX = Math.random() * maxX; // Gera uma nova posição X dentro dos limites da tela
+    let moveY = Math.random() * maxY; // Gera uma nova posição Y dentro dos limites da tela
 
-            botao.style.position = 'absolute';
-            botao.style.left = `${randomX}px`;
-            botao.style.top = `${randomY}px`;
-        });
+    botao.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
     </script>
 </body>
 </html>
